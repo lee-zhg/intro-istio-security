@@ -52,12 +52,28 @@ The control plane handles configuration from the API server and configures the P
 ## Lab Flow
 
 During the lab, you are going to
-- clone the repo
-- download and prepare Istio installation package
-- connect to IBM Cloud and IKS cluster
-- install Istio to IKS cluster
-- 
-
+- Step 1. Clone the Repo
+- Step 2. Download and Prepare Istio Installation Package
+- Step 3. Connect to IBM Cloud and IKS Cluster
+- Step 4. Install Istio to IKS Cluster
+    - 4.1 - Explore Istio Security
+- Step 5. Peer Authentication
+    - 5.1 - Setup
+    - 5.2 - Make Service-to-Service Calls in Container
+    - 5.3 - Is Data-in-Motion Secured? - Network Traffic Monitoring
+    - 5.4 - Make Service Call to Workload httpbin
+    - 5.5 - Istio Auto Mutual TLS feature
+    - 5.6 Is Data-in-Motion Secured?
+    - 5.7 - Easy Method Identifying Mutual TLS
+    - 5.8 - Peer Authentication without Change
+    - 5.9 - Enabe Mesh-Wide Istio Mutual TLS in STRICT Mode
+    - 5.10 - Enable Mutual TLS for a Namespace
+    - 5.11 - Enable Mutual TLS for a Workload
+    - 5.12 - Enable Mutual TLS for a Port
+    - 5.13 - Policy Precedence
+    - 5.14 - Peer Authentication Summary
+- Step 6. Request Authentication
+- Step 7. Authorization
 
 ### Step 1. Clone the Repo
 
@@ -436,7 +452,7 @@ Up to this point, you have started network traffic monitoring of `httpbin.foo` s
 
 You are ready to verify if the network traffic between services within your IKS cluster is encrypted or secured. Because of the **auto mutual TLS** feature, it's possible to encrypt network traffic without defining any peer authentication policy.
 
-##### 5.6.1. Send Service Requests from sleep.legacy to httpbin.foo.
+##### 5.6.1. Send Service Requests from sleep.legacy to httpbin.foo
 
 Istio sidecar was not installed in the namespace `legacy` when you deployed workload `sleep` and `httpbin` in the lab environment. 
 
@@ -474,7 +490,7 @@ When you send service requests from `sleep.legacy` (workload `sleep` in the name
 
     `Data-in-motion` is not enabled in this use case because `sleep.legacy` does not have a Istio sidecar. Istio tracks all these information. When a service request goes out from `sleep.legacy`, it's sent as `plain text` payload. The same is true for the reply payload from `httpbin.foo`.
 
-##### 5.6.2. Send Service Requests from sleep.bar to httpbin.foo.
+##### 5.6.2. Send Service Requests from sleep.bar to httpbin.foo
 
 Istio sidecar was deployed in the namespace `bar` when you deployed workload `sleep` and `httpbin` in the lab environment. 
 
@@ -1255,25 +1271,14 @@ This section covers the primary activities of enabling, configuring, and using I
 
 
 
-#### Setup
 
-> **Note: Exercise in this repo requires to install Istio on your Kubernetes cluster with the default configuration profile.**
 
-use two namespaces foo and bar, with two services, httpbin and sleep, both running with an Envoy proxy. We also use second instances of httpbin and sleep running without the sidecar in the legacy namespace. If you’d like to use the same examples when trying the tasks, run the following:
+## Summary
 
 
 
 
-### Authorization
-
-
-
-
-
-
-
-
-### Uninstall Istio
+## Uninstall Istio
 
 To uninstall Istio add-on from your cluster,
 
