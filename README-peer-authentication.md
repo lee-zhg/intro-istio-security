@@ -30,20 +30,20 @@ During the lab, you are going to
 - Step 1. Setup
 - Step 2. Make Service-to-Service Calls in Container
     - 2.1 - Review "docker container exec" Command
-    - 2.2 - Review kubectl exec Command
+    - 2.2 - Review "kubectl exec" Command
 - Step 3. Is Data-in-Motion Secured? - Network Traffic Monitoring
-- Step 4. Make Service Call to Workload httpbin
+- Step 4. Make Service Call to Workload "httpbin"
 - Step 5. Auto Mutual TLS
 - Step 6. Is Data-in-Motion Secured?
-    - 6.1 - Send Service Requests from sleep.legacy to httpbin.foo
-    - 6.2 - Send Service Requests from sleep.bar to httpbin.foo
+    - 6.1 - Send Service Requests from "sleep.legacy" to "httpbin.foo"
+    - 6.2 - Send Service Requests from "sleep.bar" to "httpbin.foo"
 - Step 7. Better Method to Identify Mutual TLS
-- Step 8. Peer Authentication without Change
+- Step 8. Peer Authentication without Policy
 - Step 9. Enabe Mesh-Wide Istio Mutual TLS
 - Step 10. Enable Mutual TLS for a Namespace
 - Step 11. Enable Mutual TLS for a Workload
 - Step 12. Enable Mutual TLS for a Port
-- Step 13. Policy Precedence
+- Step 13. Peer Authentication Policy Precedence
 - Step 14. Cleanup
 - Step 15. Peer Authentication Summary
 
