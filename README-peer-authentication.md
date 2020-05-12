@@ -119,7 +119,7 @@ You can execute command within a container running locally,
 
 1. Go back to your new terminal window and CTL-C to stop the running local container.
 
-#### 2.2 - Review `kubectl exec` Command 
+#### 2.2 - Review "kubectl exec" Command 
 
 You can execute command within a container running in your IKS cluster. To do so, you need both pod ID and container name where a service is running.
 
@@ -181,7 +181,7 @@ Running command `ps -ef` in sidecar container of pod 1 of namespace `foo` can be
 1. You started monitoring network traffic of pod 1 in the namespace `foo`. You can go back to the 2nd terminal window anytime to check the network traffic information.
 
 
-### Step 4. Make Service Call to Workload httpbin
+### Step 4. Make Service Call to Workload "httpbin"
 
 You can use the same method to get access to other containers running in your IKS cluster, and then make call to the workload `httpbin` in the namespace `foo`. 
 
@@ -204,7 +204,7 @@ For the rest of repo, the workload `httpbin` in the namespace `foo` is referred 
     `curl http://httpbin.foo:8000/ip -s -o /dev/null -w "%{http_code}\n"` is the command that is issued within the container. The command calls the `httpbin.foo` service by issuing curl command and return the http response code.
 
 
-### Step 5. Istio Auto Mutual TLS feature
+### Step 5. Auto Mutual TLS
 
 Istio v1.4 or later offers **auto mutual TLS** feature. You can adopt mutual TLS by only configuring authentication policy without worrying about destination rule. This allows you to adopt Istio mutual TLS incrementally with minimal manual configuration.
 
@@ -227,7 +227,7 @@ Up to this point, you have started network traffic monitoring of `httpbin.foo` s
 
 You are ready to verify if the network traffic between services within your IKS cluster is encrypted or secured. Because of the **auto mutual TLS** feature, it's possible to encrypt network traffic without defining any peer authentication policy.
 
-#### 6.1 - Send Service Requests from sleep.legacy to httpbin.foo
+#### 6.1 - Send Service Requests from "sleep.legacy" to "httpbin.foo"
 
 Istio sidecar was not installed in the namespace `legacy` when you deployed workload `sleep` and `httpbin` in the lab environment. 
 
@@ -265,7 +265,7 @@ When you send service requests from `sleep.legacy` (workload `sleep` in the name
 
     `Data-in-motion` is not enabled in this use case because `sleep.legacy` does not have a Istio sidecar. Istio tracks all these information. When a service request goes out from `sleep.legacy`, it's sent as `plain text` payload. The same is true for the reply payload from `httpbin.foo`.
 
-#### 6.2 - Send Service Requests from sleep.bar to httpbin.foo
+#### 6.2 - Send Service Requests from "sleep.bar" to "httpbin.foo"
 
 Istio sidecar was deployed in the namespace `bar` when you deployed workload `sleep` and `httpbin` in the lab environment. 
 
@@ -299,7 +299,7 @@ When you send service requests from `sleep.bar` (workload `sleep` in the namespa
     `Data-in-motion` is accomplished in this use case because `sleep.bar` does have a Istio sidecar. Istio tracks all these information. When a service request goes out from `sleep.bar`, it's sent as `encypted` payload. The same is true for the reply payload from `httpbin.foo`.
 
 
-### Step 7. Easy Method Identifying Mutual TLS
+### Step 7. Better Method to Identify Mutual TLS
 
 It's great that you have a way to check if mutual TLS is effective and if the network traffic payload is encypted. However, the method requires to review `tcpdump` dumps. Not quite comvenient and tuitive. 
 
@@ -389,7 +389,7 @@ In this section, you are going to identify a better way.
 1. Congratulation. You have a better and easy way to identify if `mutual TLS` is used, if the network traffic payload is `encrypted` without monitring network traffic.
 
 
-### Step 8. Peer Authentication without Change
+### Step 8. Peer Authentication without Policy
 
 You have deployed two microservices/workloads to three namespaces in your IKS cluster. 
 - `httpbin`
@@ -449,7 +449,7 @@ Before making any change, observe the default `peer authetication`.
     The communications between other workloads are not encrypted or unsecured.
 
 
-### Step 9. Enabe Mesh-Wide Istio Mutual TLS in STRICT Mode
+### Step 9. Enabe Mesh-Wide Istio Mutual TLS
 
 You have learned how `Auto mutual TLS` works in the previous section. It's a great feature that can help onboarding Istio as both secured and unsecured communications are permitted with the IKS cluster. 
 
@@ -874,7 +874,7 @@ Similarly, `portLevelSettings:` is added to the `workload` destination rule. Por
     ```
 
 
-### Step 13. Policy Precedence
+### Step 13. Peer Authentication Policy Precedence
 
 A workload-specific peer authentication policy takes precedence over a namespace-wide policy. 
 
