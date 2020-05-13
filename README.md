@@ -57,9 +57,9 @@ During the lab, you are going to
 - Step 2. Download and Prepare Istio Installation Package
 - Step 3. Connect to IBM Cloud and IKS Cluster
 - Step 4. Install Istio to IKS Cluster
-- Step 5. Peer Authentication Lab
-- Step 6. Request Authentication Lab
-- Step 7. Authorization Lab
+- Lab 1. Peer Authentication
+- Lab 2. Request Authentication
+- Lab 3. Authorization
 
 
 ### Step 1. Clone the Repo
@@ -251,17 +251,17 @@ No Istio authentication policy, authorization policy and destination rule are de
     ```
 
 
-### Step 5. Peer Authentication Lab
+### Lab 1. Peer Authentication
 
 
 
 
-### Step 6. End-user Authentication - Request Authentication Lab
+### Lab 2. End-user Authentication - Request Authentication
 
 
 
 
-### Step 7. Authorization Lab
+### Lab 3. Authorization
 
 
 
