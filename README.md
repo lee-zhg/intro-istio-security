@@ -253,17 +253,17 @@ No Istio authentication policy, authorization policy and destination rule are de
 
 ### Lab 1. Peer Authentication
 
-
+In this lab, you explore Istio peer authentication features. Follow the instructions in the [Peer Authentication Readme](README-peer-authentication.md)
 
 
 ### Lab 2. End-user Authentication - Request Authentication
 
-
+In this lab, you explore Istio request authentication features. Follow the instructions in the [Request Authentication Readme](README-request-authentication.md)
 
 
 ### Lab 3. Authorization
 
-
+In this lab, you explore Istio authorization features. Follow the instructions in the [Authorization Readme](README-authorization.md)
 
 
 
