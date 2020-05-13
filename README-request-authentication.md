@@ -35,11 +35,35 @@ During the lab, you are going to
 - Step 6. Cleanup
 
 
+### Step 0. Deploy Workloads
+
+If you completed the steps in section `Step 1. Setup` and the lab environment is still available, you may skip this section.
+
+Two microservices or workloads (both terms refer to the microservice that is deployed into the service mesh in this repo) will be deployed to three namespaces in your IKS cluster. 
+- `httpbin`
+- `sleep`
+
+In namespace `foo` and `bar`, service `httpbin` and its `Istio Sidecar/Envoy proxy` run in seperate containers of pod 1. Similarly, service `sleep` and its `Istio Sidecar/Envoy proxy` run in seperate containers of pod 2.
+
+In namespace `legacy`, service `httpbin` runs in a container of pod 1 without `Istio Sidecar/Envoy proxy`. Service `sleep` runs in a container of pod 2 without `Istio Sidecar/Envoy proxy`.
+
+![](docs/images/lab-env-01.png)
+
+1. Go the 2nd terminal window. You should be in folder `/tmp/intro-istio-security` or your repo download folder.
+
+1. Execute
+
+    ```
+    $ scripts/peer-auth-setup.sh
+    ```
+    The lab environment in the above diagram was created.
+
+
 ### Step 1. Setup
 
 For convenience, expose workload `httpbin.foo` via `ingressgateway`.
 
-1. You are still in the 1st terminal window. You should be in folder `/tmp/intro-istio-security` or your repo download folder.
+1. Go to the 1st terminal window. You should be in folder `/tmp/intro-istio-security` or your repo download folder.
 
 1. Deploy the `Ingressgateway`.
 
