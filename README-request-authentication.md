@@ -1,4 +1,4 @@
-# Istio Security
+# Istio Request Authentication
 
 Request authentication policies specify the values needed to validate a JSON Web Token (JWT). These values include, among others, the following:
 
@@ -27,31 +27,12 @@ To reject requests without tokens, configure authorization rules that specify th
 
 During the lab, you are going to
 
-- Step 1. Clone the Repo
-- Step 2. Download and Prepare Istio Installation Package
-- Step 3. Connect to IBM Cloud and IKS Cluster
-- Step 4. Install Istio to IKS Cluster
-    - 4.1 - Explore Istio Security
-- Step 5. Peer Authentication
-    - 5.1 - Setup
-    - 5.2 - Make Service-to-Service Calls in Container
-    - 5.3 - Is Data-in-Motion Secured? - Network Traffic Monitoring
-    - 5.4 - Make Service Call to Workload httpbin
-    - 5.5 - Istio Auto Mutual TLS feature
-    - 5.6 Is Data-in-Motion Secured?
-    - 5.7 - Easy Method Identifying Mutual TLS
-    - 5.8 - Peer Authentication without Change
-    - 5.9 - Enabe Mesh-Wide Istio Mutual TLS in STRICT Mode
-    - 5.10 - Enable Mutual TLS for a Namespace
-    - 5.11 - Enable Mutual TLS for a Workload
-    - 5.12 - Enable Mutual TLS for a Port
-    - 5.13 - Policy Precedence
-    - 5.14 - Peer Authentication Summary
-- Step 6. Request Authentication
-- Step 7. Authorization
-
-
-
+- Step 1. Setup
+- Step 2. - Create a Request Authentication Policy
+- Step 3. Test Request Authentication
+- Step 4. Deny Requests without Token
+- Step 5. Deny Requests without Token
+- Step 6. Cleanup
 
 
 ### Step 1. Setup
@@ -315,7 +296,7 @@ When this authorization rule takes effect, requests to $INGRESS_HOST/headers fai
     ```
 
 
-#### Step 6. Clean Up
+#### Step 6. Cleanup
 
 To clean up the environment setup for `peer authentication` and `request authentication` exercises,
 
