@@ -190,6 +190,10 @@ To simplify the testing use case and be able to easily access the sample applica
     169.47.71.131:80
     ```
 
+    ```
+    $ echo http://$GATEWAY_URL/productpage
+    ```
+
 1. Verify that the sample application is runnign in a browser via `http://$GATEWAY_URL/productpage`. For example, http://169.47.71.131:80/productpage.
 
     ![](docs/images/book-info02.png)
@@ -507,6 +511,15 @@ To grant access to the rest of workloads,
 When you’re finished experimenting with the Bookinfo sample, uninstall and clean it up using the following instructions.
 
 1. You are still in the 1st terminal window. You should be in folder `/tmp/intro-istio-security` or your repo download folder.
+
+1. Delete the authorization policies.
+
+    ```
+    delete authorizationpolicy reviews-viewer
+    delete authorizationpolicy productpage-viewer
+    delete authorizationpolicy details-viewer
+    delete authorizationpolicy deny-all
+    ```
 
 1. Delete the routing rules and terminate the application pods.
 

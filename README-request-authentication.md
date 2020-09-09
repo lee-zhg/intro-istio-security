@@ -180,7 +180,7 @@ This section uses the test token `JWT test` and `JWKS endpoint` from the Istio c
     401
     ```
 
-   > Note: the invalid token is submitted as part of service request in the form of `--header "Authorization: Bearer invalid"`. `invalid` is submitted as the toekn in this case.
+   > Note: the invalid token is submitted as part of service request in the form of `--header "Authorization: Bearer invalid"`. `invalid` is submitted as the token in this case.
 
 1. Submit a service request without a token. Requests without tokens are accepted by default.
 
@@ -249,7 +249,7 @@ To deny requests without valid tokens or no token at all,
 
 1. The request fails after you created an authorization policy to reject requests without a valid token or without a token at all. When you submitted the same request in the previous section, it was accepted and processed successfully.
 
-1. To verify all end pointSubmit a different service request without a token. 
+1. To verify all end point, submit a different service request without a token. 
 
     ```
     $ curl $INGRESS_HOST/ip -s -o /dev/null -w "%{http_code}\n"

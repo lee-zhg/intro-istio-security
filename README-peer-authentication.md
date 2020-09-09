@@ -355,7 +355,7 @@ In this section, you are going to identify a better way.
     response code: 200
     ```
 
-1. Compare the return of the last two commands, the only difference is that the header of the request from `sleep.var` to `httpbin.foo` has additional component as shown below.
+1. Compare the return of the last two commands, the only difference is that the header of the request from `sleep.bar` to `httpbin.foo` has additional component as shown below.
 
     ```
         "X-Forwarded-Client-Cert": "By=spiffe://cluster.local/ns/foo/sa/httpbin;Hash=434b9f09db06f82a9f612ce1a056dfae8c9ba4da72936b100c54c3bb240abc07;Subject=\"\";URI=spiffe://cluster.local/ns/bar/sa/sleep"
